@@ -1,6 +1,7 @@
 package myapp.app;
 
 import myapp.app.ApplicationTP1.Occurrences;
+import myapp.collections.EndOfListException;
 import myapp.tools.FileReader;
 import myapp.tools.TextFileTools;
 
@@ -8,7 +9,7 @@ import java.io.IOException;
 import java.util.Arrays;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         ApplicationHelloWorld app = new ApplicationHelloWorld();
         app.sayHello();
  
@@ -47,6 +48,11 @@ public class Main {
         //     System.err.format("Erreur lors du parcours du répertoire : %s\n", ioe.getMessage());
         // }
         
-        
+        try {
+            /*ApplicationTP2.exo4("textes");*/
+            ApplicationTP2.exo4("textes");
+        } catch (EndOfListException e) {
+            e.printStackTrace();
+        }
     }
 }
